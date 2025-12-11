@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+
+<!-- ===========================
+     BOOTSTRAP (CSS)
+=========================== -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+<!-- ===========================
+     CSS SECTION
+=========================== -->
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        font-family: Arial, sans-serif;
+    }
+
+    .login-box{
+        width: 350px;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+        animation: fadeIn 0.7s ease-in-out;
+    }
+
+    @keyframes fadeIn{
+        from{ opacity: 0; transform: scale(0.9); }
+        to{ opacity: 1; transform: scale(1); }
+    }
+
+    .title{
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .forgot-link{
+        font-size: 14px;
+        color: #2575fc;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .forgot-link:hover{
+        text-decoration: underline;
+    }
+
+    .divider{
+        text-align: center;
+        color: #777;
+        margin: 15px 0;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- ===========================
+     HTML SECTION
+=========================== -->
+
+<div class="login-box">
+    
+    <div class="title">It's my login page</div>
+
+    <!-- Email Input -->
+    <label>Email</label>
+    <input type="text" id="email" class="form-control mb-3" placeholder="Enter email">
+
+    <!-- Password Input -->
+    <label>Password</label>
+    <input type="password" id="pass" class="form-control mb-2" placeholder="Enter password">
+
+    <!-- Forgot Password -->
+    <div class="text-end mb-3">
+        <a class="forgot-link">Forgot Password?</a>
+    </div>
+
+    <!-- Login Button -->
+    <button class="btn btn-primary w-100" onclick="login()">Login</button>
+
+    <div class="divider">or</div>
+
+    <!-- Sign in with domain -->
+    <button class="btn btn-dark w-100">Sign in with your Domain</button>
+
+</div>
+
+<!-- ===========================
+     JAVASCRIPT SECTION
+=========================== -->
+<script>
+function login(){
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("pass").value;
+
+    if(email === "" || pass === ""){
+        alert("Please fill all fields!");
+        return;
+    }
+
+    if(pass.length < 6){
+        alert("Password must be at least 6 characters!");
+        return;
+    }
+
+    alert("Login Successful!");
+}
+</script>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
